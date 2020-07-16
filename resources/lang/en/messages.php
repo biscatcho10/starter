@@ -15,18 +15,27 @@ return [
 
     "hello gus" => 'Hello GUS',
     "welcom" => 'WELCOME ',
+
     "offer name required" => 'Offer Name Required',
     "offer name must be unique" => "offer name must be unique",
-    "Add your offer" => 'Add your offer ',
+    "Offer Price required" => 'Offer Price is Required',
+    "Offer price numeric" => 'The Price Must Be Number',
+    "Offer details required" => "Offer details is Required",
+
+    "Add you offer" => "Add You Offer",
+    "Offer Name" => "Offer Name",
+    "Offer price" => "Offer price",
+    "offer Details" => "offer Details",
+    "Add Offer" => "Add Offer",
+
+
     "Offer Name ar" => 'Arabic Offer Name',
     "Offer Name en" => 'English Offer Name',
-    "Offer Price" => 'Offer Price is Required',
-    "Offer price numeric" => 'The Price Must Be Number',
-    "Offer details ar" => 'ar Offer Details',
-    "Offer details en" => 'en Offer Details',
+    "Offer details ar" => 'Offer Details With Arabic',
+    "Offer details en" => 'Offer Details With English',
+
+    "Add your offer" => 'Add your offer ',
     "Save Offer" => 'Save',
-    "Offer Name" => "Offer offer name requiredName",
-    "Offer details" => "Offer details is Required",
     "operation" => "operation",
     "update" => "Update",
     "Update your offer" => "Update your offer  ",

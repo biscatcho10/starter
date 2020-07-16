@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,6 +35,7 @@ Route::group([
     Route::group(['prefix' => 'offers'], function () {
         Route::get('create', 'CrudController@create')->name('offer-create');
         Route::post('store', 'CrudController@store')->name('offer-store');
+        Route::get('all', 'CrudController@getAllOffers');
     });
 
 });

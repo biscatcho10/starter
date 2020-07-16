@@ -72,6 +72,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            label{
+                float: left;
+            }
         </style>
     </head>
     <body>
@@ -98,7 +101,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md display-2">
-                    Add Your Offer
+                    {{__('messages.Add you offer')}}
                 </div>
 
                 @if (session()->has('success'))
@@ -110,46 +113,74 @@
                 <form action=" {{ route('offer-store') }} " method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="ex1">Offer Name</label>
+                    <label for="ex1">{{__('messages.Offer Name ar')}}</label>
                         <input
                             type="text"
-                            name="name"
-                            class="form-control @error('name') is-invalid @enderror"
+                            name="name_ar"
+                            class="form-control @error('name_ar') is-invalid @enderror"
                             id="ex1"
-                            placeholder="Offer Name"
                         />
-                        @error('name')
+                        @error('name_ar')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="ex2">Offer price</label>
+                    <label for="ex1">{{__('messages.Offer Name en')}}</label>
+                        <input
+                            type="text"
+                            name="name_en"
+                            class="form-control @error('name_en') is-invalid @enderror"
+                            id="ex1"
+                        />
+                        @error('name_aen')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="ex2">{{__('messages.Offer price')}}</label>
                         <input
                             type="text"
                             name="price"
                             class="form-control @error('price') is-invalid @enderror"
                             id="ex2"
-                            placeholder="Offer Price"
                         />
                         @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Offer Name</label>
+                        <label>{{__('messages.Offer details ar')}}</label>
                         <textarea
-                            name="details"
+                            name="details_ar"
                             rows="4"
-                            class="form-control @error('details') is-invalid @enderror"
-                            placeholder="Add Your Details.."
+                            class="form-control @error('details_ar') is-invalid @enderror"
+                            placeholder="{{__('messages.Offer details ar')}}.."
                         ></textarea>
-                        @error('details')
+                        @error('details_ar')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{__('messages.Offer details en')}}</label>
+                        <textarea
+                            name="details_en"
+                            rows="4"
+                            class="form-control @error('details_en') is-invalid @enderror"
+                            placeholder="{{__('messages.Offer details en')}}.."
+                        ></textarea>
+                        @error('details_en')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        Add Offer
+
+                        {{__('messages.Add Offer')}}
                     </button>
                 </form>
             </div>

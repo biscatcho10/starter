@@ -16,20 +16,29 @@ return [
 
     "hello gus" => 'اهلا بكم ',
     "welcom" => 'اهلا  ',
+
     "offer name required" => 'أسم العرض مطلوب',
     "offer name must be unique" => 'أسم العرض يجب الا يتكرر',
-    "Add your offer" => 'أضافه عرض جديد ',
+    "Offer Price required"  => 'سعر العرض مطلوب',
+    "Offer price numeric" => 'سعر العرض لابد ان يكون رقم',
+    "Offer details required" => ' تفاصيل العرض مطلوبة',
+
+    "Add you offer" => 'اضف عرض جديد',
+    "Offer Name" => 'اسم العرض',
+    "Offer price" => "سعر العرض",
+    "offer Details" => "تفاصيل العرض",
+    "Add Offer" => "اضف عرض",
+
+
     "Offer Name ar"   => 'أسم العرض العربي',
     "Offer Name en"   => 'أسم العرض بالانجليزي',
-    "Offer Price"  => 'سعر العرض مطلوب',
-    "Offer price numeric" => 'سعر العرض لابد ان يكون رقم',
     "Offer details ar" => 'تفاصيل العرض بالعربي',
     "Offer details en" => 'تفاصيل العرض بالانجليزي',
+
+    "Add your offer" => 'أضافه عرض جديد ',
     "Save Offer"  => 'حفظ',
-    "Offer Name" => 'اسم العرض',
     "operation" => 'العمليات',
     "update" => 'تحديث',
-    "Offer details" => ' تفاصيل العرض مطلوبة',
     "Update your offer"  => " تعديل العرض  ",
     "delete"  => 'حذف',
     "offer not exist"  => 'العرض غير موجود',
