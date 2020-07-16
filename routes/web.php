@@ -20,4 +20,21 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home');//->middleware('verified');
+
+Route::get('/redirect/{service}','SocialController@redirect')->name('redirect');
+Route::get('/callback/{service}','SocialController@callback')->name('callback');
+
+Route::get('fillable', 'CrudController@getOffers');
+
+
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+], function () {
+    Route::group(['prefix' => 'offers'], function () {
+        Route::get('create', 'CrudController@create')->name('offer-create');
+        Route::post('store', 'CrudController@store')->name('offer-store');
+    });
+
+});

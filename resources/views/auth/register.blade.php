@@ -75,11 +75,19 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                        <div class="row">
+                            <div class="form-group col-6 mb-0">
+                                <div class="offset-md-4 float-right">
+                                    <button type="submit" class="btn btn-success">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-group  mb-0 col-6 float-right">
+                                <div class=" offset-md-4">
+                                    <a href=" {{ route('redirect', 'facebook') }} " class="btn btn-primary float-left">Login With Facebook</a>
+                                </div>
                             </div>
                         </div>
                     </form>
