@@ -21,12 +21,14 @@ return [
     "Offer Price required" => 'Offer Price is Required',
     "Offer price numeric" => 'The Price Must Be Number',
     "Offer details required" => "Offer details is Required",
+    "Offer Image required" => "The Offer Image Is Required",
 
     "Add you offer" => "Add You Offer",
     "Offer Name" => "Offer Name",
     "Offer price" => "Offer price",
     "offer Details" => "offer Details",
     "Add Offer" => "Add Offer",
+    "Offer Image" => "Offer Image",
 
 
     "Offer Name ar" => 'Arabic Offer Name',
@@ -40,6 +42,7 @@ return [
     "update" => "Update",
     "Update your offer" => "Update your offer  ",
     "delete" => "delete",
+    "delAjax" => "delAjax",
     "offer not exist" => "offer not exist",
     "offer deleted successfully" => "offer deleted successfully"
 ];

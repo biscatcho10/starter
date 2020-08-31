@@ -98,19 +98,17 @@
               </form>
             </div>
           </nav>
+           @if (session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{session()->get('success')}}
+                </div>
+            @endif
         <div class="flex-center position-ref full-height">
             <div class="content">
-                <div class="title m-b-md display-2">
+                <div class="mt-5 display-2">
                     {{__('messages.Add you offer')}}
                 </div>
-
-                @if (session()->has('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{session()->get('success')}}
-                    </div>
-                @endif
-
-                <form action=" {{ route('offer-store') }} " method="POST">
+                <form action=" {{ route('offer-store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                     <label for="ex1">{{__('messages.Offer Name ar')}}</label>
@@ -133,7 +131,7 @@
                             class="form-control @error('name_en') is-invalid @enderror"
                             id="ex1"
                         />
-                        @error('name_aen')
+                        @error('name_en')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -178,8 +176,19 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
+                    <div class="form-group">
+                        <label>{{__('messages.Offer Image')}}</label>
+                        <input
+                            type="file"
+                            name="image"
+                            class="form-control @error('image') is-invalid @enderror"
+                        />
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
+                    <button type="submit" class="btn btn-primary">
                         {{__('messages.Add Offer')}}
                     </button>
                 </form>

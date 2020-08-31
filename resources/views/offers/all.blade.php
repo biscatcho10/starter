@@ -74,8 +74,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Starter</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -101,12 +101,13 @@
 </nav>
 
 
-@if(Session::has('success'))
 
-    <div class="alert alert-success">
-           {{Session::get('success')}}
+
+@if (session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{session()->get('success')}}
     </div>
-    @endif
+@endif
 
 
 @if(Session::has('error'))
@@ -117,15 +118,15 @@
 
 <a href=" {{ route('offer-create') }} " class="btn btn-primary m-3 float-right">Add Offer</a>
 
-<table class="table table-bordered table-striped w-75 mx-auto mt-5">
+<table class="table table-bordered table-striped w-75 mx-auto mt-5 text-center">
     <thead>
     <tr>
         <th scope="col">ID</th>
         <th scope="col"> {{__('messages.Offer Name')}} </th>
         <th scope="col">{{__('messages.Offer price')}}</th>
         <th scope="col">{{__('messages.offer Details')}}</th>
-        {{-- <th scope="col">صوره العرض</th> --}}
-        {{-- <th scope="col">{{__('messages.operation')}}</th> --}}
+        <th scope="col">{{__('messages.Offer Image')}}</th>
+        <th scope="col" colspan="2">{{__('messages.operation')}}</th>
     </tr>
     </thead>
     <tbody>
@@ -137,26 +138,15 @@
             <td>{{$offer -> name}}</td>
             <td>{{$offer -> price}}</td>
             <td>{{$offer -> details}}</td>
-            {{-- <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>
-
+            <td><img style="width: 90px" class="rounded-circle" src="{{asset('images/offers/'.$offer->image)}}"></td>
             <td>
-                <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
-                <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>
-             </td> --}}
-
+                <a href="{{route('offer-edit',$offer -> id)}}" class="btn btn-primary"> {{__('messages.update')}}</a>
+                <a href="{{route('offer-delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>
+             </td>
         </tr>
     @endforeach
 
     </tbody>
-
-
-
-    @if(Session::has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-        </div>
-    @endif
-
 
 </table>
 </body>

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Phone;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','mobile','expire'
+        'name', 'email', 'password','mobile','expire', 'age'
     ];
 
     /**
@@ -36,4 +37,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    /////////////////End Relations////////////////////
+
+    public function phone(){
+        return $this->hasOne(Phone::class);
+    }
+
+    /////////////////End Relations////////////////////
+
 }
